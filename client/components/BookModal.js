@@ -59,7 +59,7 @@ class BookModal extends Component {
     return (
         <Modal show={this.props.show} onHide={this.props.onHide} bsSize="sm">
           <Modal.Header closeButton>
-            <Modal.Title>Create a Book</Modal.Title>
+            <Modal.Title>{`${this.props.currentBook ? 'Edit' : 'Create'} a Book`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="form-group ">
