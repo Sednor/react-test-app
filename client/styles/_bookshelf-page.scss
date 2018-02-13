@@ -11,14 +11,37 @@
     padding: $padding-base-vertical $padding-base-horizontal;
     border-bottom: 1px solid #ccc;
 
-   > .header-line {
-     > button {
-       margin-left: $padding-base-vertical;
-     }
+    > .header-line {
+      > button {
+        margin-left: $padding-base-vertical;
+      }
 
-     > .shelf-title {
-       margin-right: $padding-base-horizontal * 2;
-     }
-   }
+      > .shelf-title {
+        margin-right: $padding-base-horizontal * 2;
+      }
+    }
+
+    .book {
+      margin-top: $padding-base-vertical * 3;
+      margin-left: 200px;
+      border-bottom: 1px solid #ccc;
+
+      .book-info {
+        margin-right: $padding-base-horizontal * 2;
+
+        .book-field {
+          min-width: 150px;
+          margin-right: $padding-base-horizontal * 2;
+        }
+      }
+
+      button {
+        margin: $padding-base-vertical;
+      }
+    }
   }
+}
+
+.font-bold {
+  font-weight: bold;
 }
