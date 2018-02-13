@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import BookshelfModal from './BookshelfModal';
+import Bookshelf from './Bookshelf';
 
 import { URL } from '../config/url';
 

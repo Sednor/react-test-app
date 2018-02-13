@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 class Bookshelf extends Component {
   static propTypes = {
-    data: PropTypes.array
+    data: PropTypes.object
   };
 
   static defaultProps = {
-    data: []
+    data: {]}
   };
 
   state = {
