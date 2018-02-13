@@ -3,29 +3,52 @@ import PropTypes from 'prop-types';
 
 class Bookshelf extends Component {
   static propTypes = {
-    data: PropTypes.object
+    shelf: PropTypes.object,
+    onEdit: PropTypes.func,
+    onDelete: PropTypes.func
   };
 
   static defaultProps = {
-    data: {}
+    shelf: {},
+    onEdit: () => {
+    },
+    onDelete: () => {
+    }
   };
 
   state = {
-    data: []
+    shelf: {},
+    toggleBooks: false
   };
 
-  componentWillReceiveProps(props) {
-    this.setState({});
+  componentWillMount() {
+    this.setState({ shelf: this.props.shelf });
   }
 
-  fetchBooks() {
-    this.setState({ loading: true });
-    //get
+  componentWillReceiveProps(props) {
+    this.setState({ shelf: props.shelf });
   }
 
   render() {
     return (
-        <div>Book</div>
+        <div className="form-group bookshelf">
+          <div className="header-line">
+            <span className="shelf-title">{this.state.shelf.title}</span>
+            <button className="btn btn-default"
+                    onClick={() => this.setState({ toggleBooks: !this.state.toggleBooks })}>
+              Show books
+            </button>
+            <button className="btn btn-default" onClick={() => this.props.onEdit(this.state.shelf.id)}>Edit</button>
+            <button className="btn btn-danger" onClick={() => this.props.onDelete(this.state.shelf.id)}>Delete</button>
+          </div>
+          <div className="books">
+            {
+              this.state.toggleBooks && this.props.books.map(book =>
+                  <div>{book.title}</div>
+              )
+            }
+          </div>
+        </div>
     );
   }
 }

@@ -1,0 +1,24 @@
+.bookshelf-page {
+  padding: 0 $padding-base-horizontal * 2;
+
+  > .page-header {
+    button {
+      margin-left: $padding-base-vertical * 3;
+    }
+  }
+
+  > .bookshelf {
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border-bottom: 1px solid #ccc;
+
+   > .header-line {
+     > button {
+       margin-left: $padding-base-vertical;
+     }
+
+     > .shelf-title {
+       margin-right: $padding-base-horizontal * 2;
+     }
+   }
+  }
+}
