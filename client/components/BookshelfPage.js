@@ -1,9 +1,15 @@
 import { Component } from 'react';
+
+import { Modal } from 'react-bootstrap';
+
+import BookshelfModal from './BookshelfModal';
+
 import { URL } from '../config/url';
 
 class BookshelfPage extends Component {
   state = {
-    shelves: []
+    shelves: [],
+    show: false
   };
 
   componentDidMount() {
@@ -23,9 +29,26 @@ class BookshelfPage extends Component {
         .then(shelves => this.setState({ shelves }));
   }
 
+  createBookshelf() {
+
+  }
+
   render() {
     return (
-        <div onClick={::this.fetchBookshelves}>Bookshelves</div>
+        <div onClick={::this.fetchBookshelves}>
+          <h1>Bookshelves</h1>
+          <button className="btn btn-default" onClick={() => this.setState({ show: true })}>Create</button>
+          {
+            this.state.shelves.map(shelf =>
+                <Bookshelf key={shelf.id} data={shelf} />
+            )
+          }
+
+          <BookshelfModal show={this.state.show}
+                          onHide={() => this.setState({ show: false })}
+                          onSubmit={::this.createBookshelf}
+                          title="Create a Bookshelf" />
+        </div>
     );
   }
 }

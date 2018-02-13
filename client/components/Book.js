@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { URL } from '../config/url';
 
-
 class Book extends Component {
   state = {
     books: [],
