@@ -7,7 +7,7 @@ class Bookshelf extends Component {
   };
 
   static defaultProps = {
-    data: {]}
+    data: {}
   };
 
   state = {
@@ -15,7 +15,7 @@ class Bookshelf extends Component {
   };
 
   componentWillReceiveProps(props) {
-    this.setState({  });
+    this.setState({});
   }
 
   fetchBooks() {
