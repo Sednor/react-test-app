@@ -24,43 +24,35 @@ class Bookshelf extends Component {
     }
   };
 
-  state = {
-    shelf: {},
-    toggleBooks: false
-  };
-
-  componentWillMount() {
-    this.setState({ shelf: this.props.shelf });
-  }
-
-  componentWillReceiveProps(props) {
-    this.setState({ shelf: props.shelf });
-  }
-
   renderBookList() {
-    return this.props.books.map(book =>
-        <Book key={book.id}
-              book={book}
-              onBookEdit={id => this.props.onBookEdit(id)}
-              onBookDelete={id => this.props.onBookDelete(id)} />
-    );
+    if (this.props.books.length) {
+      return this.props.books.map(book =>
+          <Book key={book.id}
+                book={book}
+                onBookEdit={id => this.props.onBookEdit(id)}
+                onBookDelete={id => this.props.onBookDelete(id)} />
+      );
+    }
+
+    return <div className="font-bold text-center">No Books</div>
   }
 
   render() {
     return (
         <div className="form-group bookshelf">
-          <div className="header-line">
-            <div className="shelf-title">{this.state.shelf.title}</div>
-            <button className="btn btn-default"
-                    disabled={!this.props.books.length}
-                    onClick={() => this.setState({ toggleBooks: !this.state.toggleBooks })}>
-              Show books
-            </button>
-            <button className="btn btn-default" onClick={() => this.props.onEdit(this.state.shelf.id)}>Edit</button>
-            <button className="btn btn-danger" onClick={() => this.props.onDelete(this.state.shelf.id)}>Delete</button>
+          <div className="title-actions">
+              <span>
+                <i className="fa fa-pencil" onClick={() => this.props.onEdit(this.props.shelf.id)} />
+              </span>
+            <span>
+                <i className="fa fa-trash" onClick={() => this.props.onDelete(this.props.shelf.id)} />
+              </span>
+          </div>
+          <div className="shelf-header">
+            <span className="shelf-title">{this.props.shelf.title}</span>
           </div>
           <div className="books">
-            {this.state.toggleBooks && this.renderBookList()}
+            {this.renderBookList()}
           </div>
         </div>
     );

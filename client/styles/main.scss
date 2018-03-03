@@ -1,5 +1,15 @@
 $bootstrap-sass-asset-helper: 'true';
+$fa-font-path: '~font-awesome/fonts';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~font-awesome/scss/font-awesome';
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Cinzel|Inconsolata');
 
-@import 'bookshelf-page';
+@import 'base';
+@import 'variables';
+
+@import 'pages/app-page';
+@import 'pages/bookshelf-page';
+
+@import 'elements/bookshelf';
+@import 'elements/book';

@@ -20,12 +20,24 @@ class Book extends Component {
     return (
         <div className="form-group book">
           <div className="book-info">
-            <div><span className="font-bold book-field">Title:</span> {this.props.book.title}</div>
-            <div><span className="font-bold book-field">Author:</span> {this.props.book.author}</div>
-            <div><span className="font-bold book-field">ISBN:</span> {this.props.book.isbn}</div>
+            <span className="book-icon">
+              <i className="fa fa-3x fa-book" />
+            </span>
+            <div className="book-text">
+              <span className="book-title">{this.props.book.title}</span>
+              <div>by {this.props.book.author}</div>
+              <div>ISBN: {this.props.book.isbn}</div>
+            </div>
           </div>
-          <button className="btn btn-default" onClick={() => this.props.onBookEdit(this.props.book.id)}>Edit</button>
-          <button className="btn btn-danger" onClick={() => this.props.onBookDelete(this.props.book.id)}>Delete</button>
+          <div className="book-actions">
+            <span>
+              <i className="fa fa-pencil" onClick={() => this.props.onBookEdit(this.props.book.id)} />
+            </span>
+            <span>
+              <i className="fa fa-trash" onClick={() => this.props.onBookDelete(this.props.book.id)} />
+            </span>
+          </div>
+          <div className="separator" />
         </div>
     );
   }

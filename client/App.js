@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import BookshelfPage from './components/BookshelfPage';
+import BookshelfPage from './pages/BookshelfPage';
 
 class App extends Component {
   render() {

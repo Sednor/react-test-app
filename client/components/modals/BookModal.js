@@ -37,14 +37,12 @@ class BookModal extends Component {
   }
 
   componentWillReceiveProps(props) {
-    if (props.currentBook) {
-      this.setState({
-        title: props.currentBook.title,
-        author: props.currentBook.author,
-        isbn: props.currentBook.isbn,
-        bookshelf_id: props.currentBook.bookshelf_id
-      });
-    }
+    this.setState({
+      title: props.currentBook ? props.currentBook.title : '',
+      author: props.currentBook ? props.currentBook.author : '',
+      isbn: props.currentBook ? props.currentBook.isbn : '',
+      bookshelf_id: props.currentBook ? props.currentBook.bookshelf_id : null
+    });
   }
 
   handleSubmit() {

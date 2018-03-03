@@ -30,9 +30,7 @@ class BookshelfModal extends Component {
   };
 
   componentWillReceiveProps(props) {
-    if (props.currentShelf) {
-      this.setState({ shelfTitle: props.currentShelf.title });
-    }
+    this.setState({ shelfTitle: props.currentShelf ? props.currentShelf.title : '' });
   }
 
   handleSubmit() {

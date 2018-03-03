@@ -1,0 +1,58 @@
+.bookshelf-page {
+  padding: 0 $padding-base-horizontal * 2;
+
+  > .page-header {
+    margin: 0;
+
+    button {
+      margin-left: $padding-base-vertical * 3;
+    }
+
+    h1 {
+      margin: 0;
+      padding: $padding-base-horizontal 0;
+    }
+
+    .filter {
+      color: #0066ff;
+
+      input {
+        border: none;
+        background: none;
+        border-bottom: 1px solid #0066ff;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        font-size: 17px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input::-webkit-input-placeholder {
+        color: #493eff;
+      }
+
+      i {
+        font-size: 1.5em;
+        margin-right: $padding-base-vertical;
+      }
+
+      i:last-child {
+        font-size: 1.5em;
+        font-weight: 200;
+        cursor: pointer;
+      }
+    }
+  }
+
+  > .page-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .no-data {
+    justify-content: center;
+    margin: $padding-base-horizontal * 3 auto;
+    font-size: 24px;
+  }
+}

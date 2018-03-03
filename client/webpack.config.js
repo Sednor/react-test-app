@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const proxyMiddleware = require('http-proxy-middleware');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
@@ -87,12 +86,7 @@ module.exports = {
       host: 'localhost',
       port: 3001,
       proxy: {
-        target: 'localhost:3002',
-        middleware: [
-          // proxyMiddleware('/books.json', { target: 'https://react-test-globacap.herokuapp.com', secure: false }),
-          // proxyMiddleware('/bookshelves.json', { target: 'https://react-test-globacap.herokuapp.com', secure: false }),
-          // proxyMiddleware('/login.json', { target: 'https://react-test-globacap.herokuapp.com', secure: false })
-        ]
+        target: 'localhost:3002'
       }
     }),
     new ExtractTextPlugin({ filename: '[chunkhash].css' }),

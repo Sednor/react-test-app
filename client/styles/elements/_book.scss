@@ -1,0 +1,59 @@
+.book {
+  padding: $padding-base-vertical 0;
+
+  .book-title {
+    font-size: 16px;
+    font-family: 'Bree Serif', serif;
+  }
+
+  > .book-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    > .book-text {
+      > div {
+        font-family: 'Cinzel', serif;
+
+        &:last-child {
+          margin-top: $padding-base-horizontal / 1.5;
+        }
+      }
+    }
+
+    > .book-icon {
+      i {
+        color: #00b3b3;
+      }
+    }
+  }
+
+  > .book-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: $padding-base-vertical * 1.5 $padding-base-horizontal * 2 $padding-base-vertical * 1.5 0;
+
+    > span {
+      cursor: pointer;
+      color: red;
+
+      &:first-child {
+        color: #9999ff;
+        margin-right: $padding-base-horizontal;
+      }
+    }
+  }
+
+  .separator {
+    height: 1px;
+    width: 85%;
+    margin: 0 auto;
+    background: #ccffff;
+  }
+
+  &:last-child {
+    .separator {
+      display: none;
+    }
+  }
+}
